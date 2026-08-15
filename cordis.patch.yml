@@ -1,0 +1,5 @@
+# dsh-dead-links bundle patch: mounts the plugin into a dsh profile composition.
+# Install: `dsh plugin --profile <name> add file:./plugins/dsh-dead-links`
+- insert:
+    - id: dead-links
+      name: dsh-dead-links
