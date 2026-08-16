@@ -1,6 +1,6 @@
 {
   "name": "dsh-dead-links",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DSH plugin: Markdown dead-link checker tool (dead_links), zero-dependency.",
   "type": "module",
   "main": "index.js",

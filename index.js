@@ -383,7 +383,7 @@ export function apply(ctx) {
     },
   }))
 
-  void selfTest(ctx)
+  if (process.env.DSH_PLUGIN_SELFTEST === '1') void selfTest(ctx)
 }
 
 // Mount-time self-test: create a temp directory inside the workspace, drop one
