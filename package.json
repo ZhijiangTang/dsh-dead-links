@@ -29,5 +29,44 @@
     "docs",
     "markdown"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dshWorkshop": {
+    "schema": "omdsh-workshop-package/v1",
+    "type": "plugin",
+    "integration": {
+      "protocol": "harness-profile",
+      "artifact": "cordis.patch.yml"
+    },
+    "install": {
+      "mode": "transactional",
+      "adapter": "profile-bundle",
+      "failurePolicy": "generation-rollback",
+      "touchesCurrentBeforeActivation": false
+    },
+    "lifecycle": {
+      "activation": "restart-profile",
+      "dispose": "supported"
+    },
+    "permissions": [
+      "filesystem:read",
+      "network:outbound"
+    ],
+    "compatibility": {
+      "dshVersions": [
+        "0.1.0-rc.6"
+      ]
+    },
+    "capability": {
+      "id": "dead-links-tool",
+      "kind": "tool",
+      "invocation": "call dead_links on a directory containing one markdown file with one live and one dead link",
+      "expected": "returns ok=true with filesScanned=1 and dead containing only the .invalid link"
+    },
+    "evidence": {
+      "install": "docs/WORKSHOP.md",
+      "failureIsolation": "docs/WORKSHOP.md",
+      "hotReload": null,
+      "remove": "docs/WORKSHOP.md"
+    }
+  }
 }
